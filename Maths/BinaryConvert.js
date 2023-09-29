@@ -9,17 +9,12 @@
  */
 
 const BinaryConvert = (num) => {
-  let power = 1
-  let binary = 0
+    if (num === 0) {return 0}
 
-  while (num) {
-    const rem = num % 2
-    num = Math.floor(num / 2)
-    binary = rem * power + binary
-    power *= 10
-  }
-
-  return binary
-}
-
-export { BinaryConvert }
+    const binaryDigit = num % 2;
+    const binaryRest = BinaryConvert(Math.floor(num / 2));
+    return binaryDigit + binaryRest * 10;
+  };
+  
+  export { BinaryConvert };
+  
